@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAM Conecta | Servicios comunitarios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Encuentra servicios y recursos comunitarios de la Alcaldía Gustavo A. Madero.">
+</head>
+<body>
+
+    <!-- ENCABEZADO TIPO MOCKUP -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="header-text">
+                    <h1>GAM Conecta</h1>
+                    <p>Encuentra lo que necesitas cerca de ti</p>
+                </div>
+            </div>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+<main>
+        <!-- SECCIÓN DE BÚSQUEDA DIRECTA -->
+        <section class="search-section">
+            <h2>Tu comunidad, más cerca.</h2>
+            <p>Encuentra servicios, espacios y oportunidades en Gustavo A. Madero.</p>
+
+            <form class="search-bar" id="searchForm">
+                <div class="input-wrapper">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input 
+                        type="search" 
+                        id="searchInput" 
+                        placeholder="¿Qué estás buscando? (ej. PILARES, hospital, comedor...)" 
+                        aria-label="Buscar servicios comunitarios"
+                    >
+                </div>
+                <button type="submit">Buscar servicios</button>
+            </form>
+            <p id="searchMessage" aria-live="polite" style="margin-top: 10px; font-weight: 600; color: #1e3d2f;"></p>
+        </section>
+
+        <!-- SECCIÓN DINÁMICA: SUBMENÚ DE SUBCATEGORÍAS O RESULTADOS DE SERVICIOS -->
+        <section id="dynamicSection" style="display: none; margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                <h2 id="dynamicTitle" style="font-size: 1.3rem; margin: 0; color: #1e3d2f;"></h2>
+                <button id="btnVolver" style="background: #f0f0f0; border: 1px solid #ccc; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600;">⬅ Volver</button>
+            </div>
+            
+            <!-- Aquí se cargarán dinámicamente o los botones de subcategoría o las tarjetas de servicio -->
+            <div id="contenedorDinamico" class="categories-grid"></div>
+        </section>
+
+        <!-- SECCIÓN DE CATEGORÍAS PRINCIPALES -->
+        <section class="categories-section" id="categoriesSection">
+            <h2>Explora por categoría</h2>
+            
+            <div class="categories-grid">
+                <!-- Tarjeta Salud -->
+                <div class="category-card" data-category="Salud y bienestar" style="background-color: #eaf3f0; cursor: pointer;">
+                    <div class="card-icon" style="color: #2e6950;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
+                    <h3>Salud y bienestar</h3>
+                    <p>Centros de salud, hospitales y atención</p>
+                </div>
+
+                <!-- Tarjeta Salud Sexual -->
+                <div class="category-card" data-category="Salud sexual y reproductiva" style="background-color: #faeceb; cursor: pointer;">
+                    <div class="card-icon" style="color: #9c5454;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c0-1.5.5-2.5 1.5-3.5s2.5-1.5 3.5-1.5c3.5 0 6-2.5 6-6 0-5.5-4.5-10-10-10z"></path></svg>
+                    </div>
+                    <h3>Salud sexual y reproductiva</h3>
+                    <p>Orientación, clínicas y planificación</p>
+                </div>
+
+                <!-- Tarjeta Alimentación -->
+                <div class="category-card" data-category="Alimentación y apoyo comunitario" style="background-color: #f7f1e8; cursor: pointer;">
+                    <div class="card-icon" style="color: #8c6747;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"></path><path d="M12 2v10a4 4 0 0 0 4 4v6"></path><path d="M6 2v20"></path></svg>
+                    </div>
+                    <h3>Alimentación y apoyo</h3>
+                    <p>Comedores comunitarios y programas</p>
+                </div>
+
+                <!-- Tarjeta Capacitación -->
+                <div class="category-card" data-category="Educación y capacitación" style="background-color: #f0edf6; cursor: pointer;">
+                    <div class="card-icon" style="color: #634b8c;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    </div>
+                    <h3>Educación y capacitación</h3>
+                    <p>PILARES y cursos CECATI</p>
+                </div>
+
+                <!-- Tarjeta Juventud -->
+                <div class="category-card" data-category="Juventud y desarrollo comunitario" style="background-color: #f2f5ea; cursor: pointer;">
+                    <div class="card-icon" style="color: #6a7c47;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Juventud y deporte</h3>
+                    <p>FAROS, deportivos y cultura</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
