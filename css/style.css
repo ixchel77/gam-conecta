@@ -213,3 +213,57 @@ main {
         grid-template-columns: 1fr;
     }
 }
+/* Sección Acerca de y Contacto */
+.info-section {
+  background-color: #f8f9fa;
+  padding: 45px 20px;
+  border-top: 1px solid #e9ecef;
+  margin-top: 50px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.info-card p {
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.contacto-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.contacto-lista li {
+  margin-bottom: 10px;
+  color: #444444;
+}
+
+.contacto-lista a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contacto-lista a:hover {
+  text-decoration: underline;
+}
